@@ -11,7 +11,7 @@
 - [ ] Check all public factual claims for an authoritative source and access date. Generic channel assumptions remain explicitly hypothetical.
 - [ ] Confirm Japanese concept attribution and English explanations are accurate without implying organizational endorsement.
 - [ ] Review [the public project charter](PROJECT_CHARTER.md) as the current scope; confirm that historical experience is separated from the new synthetic method demonstration.
-- [ ] Choose a license for newly owned code and other assets, confirm ownership, and decide whether separate asset terms are needed. A dependency’s license does not license this repository.
+- [x] Select MIT License for independently owned code, documentation, and original assets (`LICENSE`). Owner confirms that all included material is owned or authorized; third-party dependencies retain their separate licenses.
 
 ## Full repository and history inspection
 
@@ -38,11 +38,11 @@ If restricted content is discovered, stop publication and handle removal through
 - [ ] Confirm no metrics imply real market validity, proven targeting, deployment, uplift, or ROI.
 - [ ] Confirm the pilot plan defines observation units, denominators, consent/linkage limits, comparison design, calendar effects, promotions, footfall, and stockouts.
 - [ ] Review supported dependencies, their licenses, packaging metadata, and CI results. Record differences between local validation and hosted CI execution.
-- [ ] Obtain successful hosted GitHub Actions results on the private feature PR, including a single uninterrupted full test suite. Local or batched review results do not establish that hosted run.
+- [x] Hosted GitHub Actions passed on the private feature commit for Python 3.11, 3.12, and 3.13, including a full test suite per job: https://github.com/TohruSu/retail-customer-segmentation/actions/runs/38374579296 . Recheck the latest commit before merging.
 
 ## Release decisions
 
-- [ ] Owner approves the final content, narrative rights, asset rights, full-history review, and chosen license.
+- [ ] Owner confirms final contents, concept and narrative rights, asset rights, and complete intended-publication Git history. The MIT license has been selected for independently owned material.
 - [ ] Keep the authorized feature commit/push/PR within the private repository; describe the independent synthetic case and actual validation without claiming a store result.
 - [ ] Obtain separate explicit owner approval before merge, release tag, publication, or Public visibility change.
 - [ ] After final review and explicit approval, consider a versioned release and portfolio link. No publication is automatic.
