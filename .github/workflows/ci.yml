@@ -1,0 +1,57 @@
+name: Reproducible synthetic case
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    env:
+      OMP_NUM_THREADS: "2"
+      OPENBLAS_NUM_THREADS: "2"
+      MKL_NUM_THREADS: "2"
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
+      - name: Install the declared, constrained development environment
+        run: python -m pip install -e '.[dev]' -c requirements-dev.lock
+      - name: Lint and format
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Unit and integration tests
+        run: python -m pytest -q
+      - name: Execute all eight notebooks
+        run: python scripts/check_notebooks.py
+      - name: CLI smoke
+        run: |
+          retail-case generate --output build/smoke.csv --n 80 --seed 7
+          retail-case analyze --input build/smoke.csv --output-dir build/smoke-report --seed 7
+          python -c "import json; from pathlib import Path; r=json.loads(Path('build/smoke-report/report.json').read_text()); assert r['data_status']=='SYNTHETIC' and r['n_rows']==80 and len(r['candidates'])==4"
+      - name: Check committed change whitespace
+        shell: bash
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha || github.event.before }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          if [[ -z "$BASE_SHA" || "$BASE_SHA" =~ ^0+$ ]] || \
+            ! git cat-file -e "${BASE_SHA}^{commit}" 2>/dev/null; then
+            BASE_SHA="$(git hash-object -t tree /dev/null)"
+          fi
+          git diff --check "$BASE_SHA" "$HEAD_SHA" --
