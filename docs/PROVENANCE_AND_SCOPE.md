@@ -43,7 +43,7 @@ The optional space scenario of roughly 150 tsubo is only a case-design assumptio
 
 ## Ownership and review
 
-The user reports permission for self-authored analysis materials, while questionnaires and survey results remain restricted. That statement is the working boundary; it does not establish rights in every sentence or asset. The owner must confirm rights in the final narrative and graphics and choose a license for material they own. No license is inferred from the permission statement.
+The user reports permission for self-authored analysis materials, while questionnaires and survey results remain restricted. That statement is the working boundary; it does not establish rights in every sentence or asset. The owner reports selecting the MIT License for independently owned code, documentation, and original artwork (`../LICENSE`). The owner must still confirm rights in each final narrative and graphic; third-party dependencies retain their own license terms.
 
 Automated repository checks and a written audit support review but cannot certify legal permissions or the full history. A feature-branch commit, push, and PR in the private repository are authorized for review. Public release still requires [the publication checklist](PUBLICATION_CHECKLIST.md), including manual review of every historical revision, rights confirmation, license choice, and hosted CI verification. Merge, tag, and visibility changes require separate owner approval.
 
