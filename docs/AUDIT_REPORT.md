@@ -195,3 +195,7 @@ GitHub REST and GraphQL requests currently return `Forbidden`. Native Git access
 is available; final delivery records the actual feature push and either the PR
 URL or the manual compare route. No API failure is interpreted as permission to
 change credentials, repository security settings, or visibility.
+
+## Publication preparation update
+
+The owner has selected MIT for independently owned code, documentation, and original graphical/strategy materials, subject to confirming each artifact's rights. `LICENSE` was added to the feature branch. Hosted GitHub Actions completed successfully for Python 3.11, 3.12, and 3.13 on commit `abc9c814` (run https://github.com/TohruSu/retail-customer-segmentation/actions/runs/38374579296). This does not replace the final review of the new branch commit, complete intended-publication history, and owner approval before visibility or merge changes.
