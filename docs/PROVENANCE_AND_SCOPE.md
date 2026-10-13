@@ -41,10 +41,10 @@ This case uses generic retail channels. It makes no factual claims about a named
 
 The optional space scenario of roughly 150 tsubo is only a case-design assumption. It is not a verified location, allocated retail space, implementation budget, or authenticated floor plan.
 
-## Ownership and review
+## Ownership and publication
 
-The user reports permission for self-authored analysis materials, while questionnaires and survey results remain restricted. That statement is the working boundary; it does not establish rights in every sentence or asset. The owner reports selecting the MIT License for independently owned code, documentation, and original artwork (`../LICENSE`). The owner must still confirm rights in each final narrative and graphic; third-party dependencies retain their own license terms.
+The owner confirmed the right to publish their original strategy concept and independently authored project materials, while questionnaires and original survey results remain outside this repository. Code, documentation and original artwork are published under the [MIT License](../LICENSE); third-party Python dependencies retain their respective licenses.
 
-Automated repository checks and a written audit support review but cannot certify legal permissions or the full history. A feature-branch commit, push, and PR in the private repository are authorized for review. Public release still requires [the publication checklist](PUBLICATION_CHECKLIST.md), including manual review of every historical revision, rights confirmation, license choice, and hosted CI verification. Merge, tag, and visibility changes require separate owner approval.
+The initial review inspected the intended source tree, notebook metadata, generated assets and Git history. The owner accepted the earlier specification's presence in historical commit `a8d5488`; that document is absent from the current tree. See the [engineering review](AUDIT_REPORT.md) and [publication record](PUBLICATION_CHECKLIST.md) for the completed checks.
 
-Removing an earlier requirements document from the current tree does not remove it from existing commits. Historical background references in earlier revisions remain an owner review/remediation decision; this refinement does not rewrite history. See [the audit report](AUDIT_REPORT.md) for the recorded history scope and remaining decisions.
+Synthetic-data analysis demonstrates a workflow, not observed retail performance. Any future real-world data, external visual, or company-specific claim requires appropriate permission and evidence before publication.
