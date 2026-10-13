@@ -39,8 +39,8 @@ Fresh installation must support deterministic generation and end-to-end analysis
 
 Detailed limitations belong in [analytical limitations](ANALYTICAL_LIMITATIONS.md); business choices and future evaluation belong in [the strategy case](STRATEGY_CASE.md). An optional roughly 150-tsubo space is only an exercise assumption, not a verified site or architectural plan.
 
-## Review and release boundary
+## Maintenance and publication
 
-A private feature commit, push, and PR are authorized for review. Publishing, merging, tagging a release, or changing visibility requires separate owner approval. Before public release, the owner must confirm concept/prose/asset rights, review the full current and historical repository, resolve earlier historical references, choose a license for known-owned materials, and verify hosted CI. Removing a file now does not remove historical copies; history remediation remains owner-controlled.
+The independent case study is published under the [MIT License](../LICENSE). Its synthetic data, analytical claims, and illustrative strategy should remain clearly distinguished from measured business outcomes.
 
-See [provenance and scope](PROVENANCE_AND_SCOPE.md), [the audit report](AUDIT_REPORT.md), and [the publication checklist](PUBLICATION_CHECKLIST.md). No publication permission or license is inferred from successful tests.
+Changes to the schema, methods or figures should be accompanied by updated tests, eight-notebook execution, documentation and passing GitHub Actions. For the initial review record and data boundaries, see [AUDIT_REPORT.md](AUDIT_REPORT.md) and [PROVENANCE_AND_SCOPE.md](PROVENANCE_AND_SCOPE.md).
